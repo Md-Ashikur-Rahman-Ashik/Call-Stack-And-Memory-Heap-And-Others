@@ -38,3 +38,25 @@
 // const test = () => {
 //   console.log("Test");
 // };
+
+// Lexical Environment
+
+// const calc = (a, b) => {
+//   // return a + b;
+//   let num1 = a;
+//   let num2 = b;
+
+//   const add = () => {
+//     return num1 + num2;
+//   };
+
+//   return add();
+// };
+
+// console.log(calc(2, 2));
+
+// const sub = () => {
+//   let number = 5;
+// };
+
+// console.log(number);
