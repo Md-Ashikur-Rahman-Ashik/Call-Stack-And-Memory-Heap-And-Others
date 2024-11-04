@@ -23,5 +23,18 @@
 //   arr.push(i);
 // }
 
-
 // Hoisting
+
+// console.log(name);
+// var name = "Hero";
+// console.log(name);
+
+// test();
+
+// (function test() {
+//   console.log("Test");
+// })();
+
+// const test = () => {
+//   console.log("Test");
+// };
