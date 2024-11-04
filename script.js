@@ -60,3 +60,33 @@
 // };
 
 // console.log(number);
+
+// Scope
+
+// let firstName = "Hero";
+
+// const secondFunction = () => {
+//   let lastName = "Alam";
+
+//   console.log(firstName);
+
+//   const firstFunction = () => {
+//     console.log(lastName);
+// let lastName = "Alam";
+
+// console.log(lastName);
+// };
+
+//   firstFunction();
+// };
+
+// firstFunction();
+// secondFunction();
+
+const firstFunction = () => {
+  let firstName = "Hero"
+}
+
+if(4 < 5){
+  let lastName = "Alam"
+}
