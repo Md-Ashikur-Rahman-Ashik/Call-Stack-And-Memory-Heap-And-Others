@@ -40,4 +40,47 @@ Array.prototype.unique = function () {
   return [...new Set(this)];
 };
 
-console.log(arr.unique());
+// console.log(arr.unique());
+
+// "use strict";
+
+// const func = () => {
+//  console.log(this);
+// };
+
+// const count = () => {
+//   for (var i = 1; i < 5; i++) {}
+//   console.log(i);
+//  };
+//  count();
+
+// const car = {
+//   imported: 250,
+//   price: 26500000,
+//   calc: function () {
+//    console.log(this.price * this.imported);
+//   },
+//  };
+//  const bike = {
+//   imported: 150,
+//   price: 2200000,
+//  };
+ 
+//  bike.calc();
+
+const b = 5;
+function calc(num1, num2) {
+ const a = num1;
+ const b = 2;
+ function sum() {
+  return a + b;
+ }
+ function sub() {
+  return a - b;
+ }
+ var summationResult = sum();
+ var subtractionResult = sub();
+ return { summationResult, subtractionResult };
+}
+const result = calc(5, 15);
+console.log(result);
