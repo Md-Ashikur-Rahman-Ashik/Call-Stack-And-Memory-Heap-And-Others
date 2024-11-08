@@ -1,15 +1,15 @@
 "use strict";
 
-const Car = function (brand, price, stock) {
-  this.brand = brand;
-  this.price = price;
-  this.stock = stock;
+// const Car = function (brand, price, stock) {
+// this.brand = brand;
+// this.price = price;
+// this.stock = stock;
 
-  //!   Avoid this type of action
-  //   this.totalProfit = function(){
+//!   Avoid this type of action
+//   this.totalProfit = function(){
 
-  //   }
-};
+//   }
+// };
 
 //* New empty object {} is created
 //* Function is called and this = {}
@@ -22,23 +22,23 @@ const Car = function (brand, price, stock) {
 // console.log(myCar);
 // console.log(h6);
 
-Car.prototype.totalProfit = function () {
-  return this.price * this.stock;
-};
+// Car.prototype.totalProfit = function () {
+//   return this.price * this.stock;
+// };
 
 // console.log(h6.totalProfit());
 // console.log(myCar.totalProfit());
 
-const arr = [1, 1, 5, 7, 9, 2, 8, 7, 3, 5, 5];
+// const arr = [1, 1, 5, 7, 9, 2, 8, 7, 3, 5, 5];
 
 // new Array = []
 
 // console.log(arr.__proto__);
 
 //! DON'T DO THIS KIND OF THINGS
-Array.prototype.unique = function () {
-  return [...new Set(this)];
-};
+// Array.prototype.unique = function () {
+//   return [...new Set(this)];
+// };
 
 // console.log(arr.unique());
 
@@ -93,28 +93,42 @@ Array.prototype.unique = function () {
 
 //* Class Expression
 
-const CarCl = class {
-  constructor(brand, price, stock) {
-    this.brand = brand;
-    this.price = price;
-    this.stock = stock;
-  }
+// const CarCl = class {
+// constructor(brand, price, stock) {
+//   this.brand = brand;
+//   this.price = price;
+//   this.stock = stock;
+// }
 
-  // Instance Method
-  totalProfit() {
-    return this.price * this.stock;
-  }
+// Instance Method
+// totalProfit() {
+//   return this.price * this.stock;
+// }
 
-  // Static Method
-  static hello() {
-    console.log("Hello World");
-  }
-};
+// Static Method
+// static hello() {
+//   console.log("Hello World");
+// }
+// };
 
-const myCar = new CarCl("Toyota", 10, 2);
-const h6 = new Car("Haval", 18, 2);
+// const myCar = new CarCl("Toyota", 10, 2);
+// const h6 = new Car("Haval", 18, 2);
 
 // console.log(myCar.totalProfit());
 // console.log(h6);
 
-CarCl.hello();
+// CarCl.hello();
+
+// Object.create()
+
+const CarProto = {
+  totalProfit() {
+    return this.price * this.stock;
+  },
+};
+
+const h6 = Object.create(CarProto);
+
+const brand = 
+
+console.log(h6);
