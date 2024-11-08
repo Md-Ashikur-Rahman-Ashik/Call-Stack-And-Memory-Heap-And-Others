@@ -100,13 +100,21 @@ const CarCl = class {
     this.stock = stock;
   }
 
+  // Instance Method
   totalProfit() {
     return this.price * this.stock;
+  }
+
+  // Static Method
+  static hello() {
+    console.log("Hello World");
   }
 };
 
 const myCar = new CarCl("Toyota", 10, 2);
 const h6 = new Car("Haval", 18, 2);
 
-console.log(myCar.totalProfit());
-console.log(h6);
+// console.log(myCar.totalProfit());
+// console.log(h6);
+
+CarCl.hello();
