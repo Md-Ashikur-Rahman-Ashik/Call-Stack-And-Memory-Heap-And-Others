@@ -83,10 +83,14 @@
 // firstFunction();
 // secondFunction();
 
-const firstFunction = () => {
-  let firstName = "Hero"
-}
+// const firstFunction = () => {
+//   let firstName = "Hero"
+// }
 
-if(4 < 5){
-  let lastName = "Alam"
-}
+// if(4 < 5){
+//   let lastName = "Alam"
+// }
+
+// Exploring "this"
+
+console.log(this);
