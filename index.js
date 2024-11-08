@@ -16,8 +16,8 @@ const Car = function (brand, price, stock) {
 //* Empty object is linked to prototype
 //* Object is returned
 
-const myCar = new Car("Toyota", 10, 5);
-const h6 = new Car("Haval", 15, 2);
+// const myCar = new Car("Toyota", 10, 5);
+// const h6 = new Car("Haval", 15, 2);
 
 // console.log(myCar);
 // console.log(h6);
@@ -65,22 +65,48 @@ Array.prototype.unique = function () {
 //   imported: 150,
 //   price: 2200000,
 //  };
- 
+
 //  bike.calc();
 
-const b = 5;
-function calc(num1, num2) {
- const a = num1;
- const b = 2;
- function sum() {
-  return a + b;
- }
- function sub() {
-  return a - b;
- }
- var summationResult = sum();
- var subtractionResult = sub();
- return { summationResult, subtractionResult };
-}
-const result = calc(5, 15);
-console.log(result);
+// const b = 5;
+// function calc(num1, num2) {
+//  const a = num1;
+//  const b = 2;
+//  function sum() {
+//   return a + b;
+//  }
+//  function sub() {
+//   return a - b;
+//  }
+//  var summationResult = sum();
+//  var subtractionResult = sub();
+//  return { summationResult, subtractionResult };
+// }
+// const result = calc(5, 15);
+// console.log(result);
+
+//* Class Declaration
+
+// class CarCl{
+
+// }
+
+//* Class Expression
+
+const CarCl = class {
+  constructor(brand, price, stock) {
+    this.brand = brand;
+    this.price = price;
+    this.stock = stock;
+  }
+
+  totalProfit() {
+    return this.price * this.stock;
+  }
+};
+
+const myCar = new CarCl("Toyota", 10, 2);
+const h6 = new Car("Haval", 18, 2);
+
+console.log(myCar.totalProfit());
+console.log(h6);
