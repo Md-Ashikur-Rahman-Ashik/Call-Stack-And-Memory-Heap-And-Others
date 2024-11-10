@@ -1,4 +1,4 @@
-"use strict";
+// "use strict";
 
 // const Car = function (brand, price, stock) {
 // this.brand = brand;
@@ -121,24 +121,66 @@
 
 // Object.create()
 
-const CarProto = {
-  totalProfit() {
-    return this.price * this.stock;
-  },
+// const CarProto = {
+//   totalProfit() {
+//     return this.price * this.stock;
+//   },
 
-  modifier(brand, price, stock) {
-    this.brand = brand;
-    this.price = price;
-    this.stock = stock;
-  },
-};
+//   modifier(brand, price, stock) {
+//     this.brand = brand;
+//     this.price = price;
+//     this.stock = stock;
+//   },
+// };
 
-const h6 = Object.create(CarProto);
+// const h6 = Object.create(CarProto);
 
 // h6.brand = "Haval";
 // h6.price = 10;
 // h6.stock = 2;
 
-h6.modifier("Haval", 10, 2);
+// h6.modifier("Haval", 10, 2);
 
-console.log(h6);
+// console.log(h6);
+
+// * call() and apply()
+
+const shohag = {
+  company: "Shohag",
+  serialCode: "SH",
+  bookings: [],
+
+  // book: function () {},
+  book(name, id) {
+    console.log(
+      `${name} booked a seat in ${this.company} ${this.serialCode}${id}`
+    );
+
+    this.bookings.push({
+      name,
+      bus: `${this.company} ${this.serialCode}${id}`,
+    });
+  },
+};
+
+shohag.book("Ashikur Rahman", 110);
+// console.log(shohag.bookings);
+
+const book = shohag.book;
+
+// book("Mezba", 255);
+book.call(shohag, "Mezba", 255);
+// console.log(shohag.bookings);
+
+const hanif = {
+  company: "Hanif",
+  serialCode: "HA",
+  bookings: [],
+};
+
+const bookingInfo = ["Abdullah Al Fahim", 555];
+
+// book.call(hanif, "Abdullah Al Fahim", 555);
+// book.apply(hanif, bookingInfo);
+book.call(hanif, ...bookingInfo);
+console.log(hanif.bookings);
