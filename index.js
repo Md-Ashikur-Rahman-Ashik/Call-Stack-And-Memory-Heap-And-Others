@@ -125,10 +125,20 @@ const CarProto = {
   totalProfit() {
     return this.price * this.stock;
   },
+
+  modifier(brand, price, stock) {
+    this.brand = brand;
+    this.price = price;
+    this.stock = stock;
+  },
 };
 
 const h6 = Object.create(CarProto);
 
-const brand = 
+// h6.brand = "Haval";
+// h6.price = 10;
+// h6.stock = 2;
+
+h6.modifier("Haval", 10, 2);
 
 console.log(h6);
