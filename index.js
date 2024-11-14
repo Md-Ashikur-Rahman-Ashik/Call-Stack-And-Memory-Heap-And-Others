@@ -145,42 +145,69 @@
 
 // * call() and apply()
 
-const shohag = {
-  company: "Shohag",
-  serialCode: "SH",
-  bookings: [],
+// const shohag = {
+//   company: "Shohag",
+//   serialCode: "SH",
+//   bookings: [],
 
-  // book: function () {},
-  book(name, id) {
-    console.log(
-      `${name} booked a seat in ${this.company} ${this.serialCode}${id}`
-    );
+// book: function () {},
+//   book(name, id) {
+//     console.log(
+//       `${name} booked a seat in ${this.company} ${this.serialCode}${id}`
+//     );
 
-    this.bookings.push({
-      name,
-      bus: `${this.company} ${this.serialCode}${id}`,
-    });
-  },
-};
+//     this.bookings.push({
+//       name,
+//       bus: `${this.company} ${this.serialCode}${id}`,
+//     });
+//   },
+// };
 
-shohag.book("Ashikur Rahman", 110);
+// shohag.book("Ashikur Rahman", 110);
 // console.log(shohag.bookings);
 
-const book = shohag.book;
+// const book = shohag.book;
 
 // book("Mezba", 255);
-book.call(shohag, "Mezba", 255);
+// book.call(shohag, "Mezba", 255);
 // console.log(shohag.bookings);
 
-const hanif = {
-  company: "Hanif",
-  serialCode: "HA",
-  bookings: [],
-};
+// const hanif = {
+//   company: "Hanif",
+//   serialCode: "HA",
+//   bookings: [],
+// };
 
-const bookingInfo = ["Abdullah Al Fahim", 555];
+// const bookingInfo = ["Abdullah Al Fahim", 555];
 
 // book.call(hanif, "Abdullah Al Fahim", 555);
 // book.apply(hanif, bookingInfo);
-book.call(hanif, ...bookingInfo);
-console.log(hanif.bookings);
+// book.call(hanif, ...bookingInfo);
+// console.log(hanif.bookings);
+
+const Person = function (name, birthYear) {
+  this.name = name;
+  this.birthYear = birthYear;
+};
+
+Person.prototype.calculateAge = function (year) {
+  return year - this.birthYear;
+};
+
+const mir = new Person("Mir", 1970);
+// console.log(mir.calculateAge(2058));
+
+const Student = function (name, birthYear, subject) {
+  // Person(name, birthYear);
+  Person.call(this, name, birthYear);
+  this.subject = subject;
+};
+
+Student.prototype = Object.create(Person.prototype);
+
+Student.prototype.intro = function () {
+  return `I'm ${this.name}`;
+};
+
+const mezba = new Student("Mezba Abedin", 1965, "Science");
+console.log(mezba.calculateAge(2001));
