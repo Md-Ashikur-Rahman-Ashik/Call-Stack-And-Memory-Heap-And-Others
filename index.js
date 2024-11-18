@@ -224,4 +224,9 @@ class Person {
 }
 
 const mizan = new Person("Mizan", 1980);
-console.log(mizan);
+// console.log(mizan);
+
+class Student extends Person {}
+
+const fahim = new Student("Fahim", 1988);
+console.log(fahim.calculateAge());
