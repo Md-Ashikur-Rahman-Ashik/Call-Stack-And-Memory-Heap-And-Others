@@ -226,7 +226,16 @@ class Person {
 const mizan = new Person("Mizan", 1980);
 // console.log(mizan);
 
-class Student extends Person {}
+class Student extends Person {
+  constructor(name, birthYear, subject) {
+    super(name, birthYear);
+    this.subject = subject;
+  }
 
-const fahim = new Student("Fahim", 1988);
+  calculateAge() {
+    return 2040 - this.birthYear;
+  }
+}
+
+const fahim = new Student("Fahim", 1988, "CSE");
 console.log(fahim.calculateAge());
