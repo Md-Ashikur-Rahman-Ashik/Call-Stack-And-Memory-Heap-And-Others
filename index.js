@@ -212,30 +212,46 @@
 // const mezba = new Student("Mezba Abedin", 1965, "Science");
 // console.log(mezba.calculateAge(2001));
 
-class Person {
-  constructor(name, birthYear) {
-    this.name = name;
-    this.birthYear = birthYear;
-  }
+// class Person {
+//   constructor(name, birthYear) {
+//     this.name = name;
+//     this.birthYear = birthYear;
+//   }
 
-  calculateAge() {
-    return 2030 - this.birthYear;
-  }
-}
+//   calculateAge() {
+//     return 2030 - this.birthYear;
+//   }
+// }
 
-const mizan = new Person("Mizan", 1980);
+// const mizan = new Person("Mizan", 1980);
 // console.log(mizan);
 
-class Student extends Person {
-  constructor(name, birthYear, subject) {
-    super(name, birthYear);
-    this.subject = subject;
-  }
+// class Student extends Person {
+//   constructor(name, birthYear, subject) {
+//     super(name, birthYear);
+//     this.subject = subject;
+//   }
 
-  calculateAge() {
-    return 2040 - this.birthYear;
-  }
-}
+//   calculateAge() {
+//     return 2040 - this.birthYear;
+//   }
+// }
 
-const fahim = new Student("Fahim", 1988, "CSE");
-console.log(fahim.calculateAge());
+// const fahim = new Student("Fahim", 1988, "CSE");
+// console.log(fahim.calculateAge());
+
+// call() and apply()
+
+const shohag = {
+  company: "Shohag",
+  serialCode: "SH",
+  bookings: [],
+
+  // book: function(){
+
+  // }
+
+  book(name, id){
+    console.log(`${name} booked a seat in ${this.company}`)
+  }
+};
