@@ -251,7 +251,11 @@ const shohag = {
 
   // }
 
-  book(name, id){
-    console.log(`${name} booked a seat in ${this.company}`)
-  }
+  book(name, id) {
+    console.log(
+      `${name} booked a seat in ${this.company} ${this.serialCode}${id}`
+    );
+  },
 };
+
+shohag.book("Mir Hussain", 110);
