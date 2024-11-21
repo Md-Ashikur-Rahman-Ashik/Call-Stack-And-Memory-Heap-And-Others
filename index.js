@@ -255,7 +255,25 @@ const shohag = {
     console.log(
       `${name} booked a seat in ${this.company} ${this.serialCode}${id}`
     );
+
+    this.bookings.push({
+      name,
+      bus: `${this.company} ${this.serialCode}${id}`,
+    });
   },
 };
 
 shohag.book("Mir Hussain", 110);
+// console.log(shohag.bookings);
+
+const book = shohag.book;
+book.call(shohag, "Mezba Abedin", 255);
+
+const hanif = {
+  company: "Hanif",
+  serialCode: "HA",
+  bookings: [],
+};
+
+book.call(hanif, "Abdullah Al Fahim", 555);
+book.apply(hanif, ["Abdullah Al Fahim", 555]);
