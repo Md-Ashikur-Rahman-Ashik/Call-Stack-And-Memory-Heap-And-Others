@@ -362,3 +362,19 @@
 // const rav4 = new CarCl("Toyota", 18, 2);
 // console.log(rav4.totalProfit());
 // CarCl.salam();
+
+// const CarProto = {
+//   totalProfit() {
+//     return this.price * this.stock;
+//   },
+
+//   modifier(brand, price, stock) {
+//     this.brand = brand;
+//     this.price = price;
+//     this.stock = stock;
+//   },
+// };
+
+// const h6 = Object.create(CarProto);
+// h6.modifier("Haval", 10, 2);
+// console.log(h6.totalProfit());
