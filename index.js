@@ -242,7 +242,7 @@
 
 // call() and apply()
 
-const shohag = {
+/*const shohag = {
   company: "Shohag",
   serialCode: "SH",
   bookings: [],
@@ -261,19 +261,45 @@ const shohag = {
       bus: `${this.company} ${this.serialCode}${id}`,
     });
   },
-};
+};*/
 
-shohag.book("Mir Hussain", 110);
+// shohag.book("Mir Hussain", 110);
 // console.log(shohag.bookings);
 
-const book = shohag.book;
-book.call(shohag, "Mezba Abedin", 255);
+// const book = shohag.book;
+// book.call(shohag, "Mezba Abedin", 255);
 
-const hanif = {
-  company: "Hanif",
-  serialCode: "HA",
-  bookings: [],
+// const hanif = {
+//   company: "Hanif",
+//   serialCode: "HA",
+//   bookings: [],
+// };
+
+// book.call(hanif, "Abdullah Al Fahim", 555);
+// book.apply(hanif, ["Abdullah Al Fahim", 555]);
+
+const Person = function (name, birthYear) {
+  this.name = name;
+  this.birthYear = birthYear;
 };
 
-book.call(hanif, "Abdullah Al Fahim", 555);
-book.apply(hanif, ["Abdullah Al Fahim", 555]);
+Person.prototype.calculateAge = function (year) {
+  return year - this.birthYear;
+};
+
+const mir = new Person("Mir", 1970);
+// console.log(mir.calculateAge(2024));
+
+const Student = function (name, birthYear, subject) {
+  Person.call(this, name, birthYear);
+  this.subject = subject;
+};
+
+Student.prototype = Object.create(Person.prototype);
+
+Student.prototype.intro = function () {
+  return `I'm ${this.name}`;
+};
+
+const mezba = new Student("Mezba Abedin", 1965, "Science");
+console.log(mezba.calculateAge(2024));
