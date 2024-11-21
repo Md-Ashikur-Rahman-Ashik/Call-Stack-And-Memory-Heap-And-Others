@@ -331,3 +331,34 @@
 
 // const fahim = new Student("Fahim", 1990, "CSE");
 // console.log(fahim.calculateAge());
+
+//* Class Declaration
+
+// class CarCl{
+
+// }
+
+//* Class Expression
+
+/*const CarCl = class {
+  constructor(brand, price, stock) {
+    this.brand = brand;
+    this.price = price;
+    this.stock = stock;
+  }
+
+  // Instance method
+  totalProfit() {
+    return this.price * this.stock;
+  }
+
+  // Static method
+  static salam() {
+    console.log("As Salamu Alaikum");
+  }
+};*/
+
+// const h6 = new CarCl("Haval", 10, 2);
+// const rav4 = new CarCl("Toyota", 18, 2);
+// console.log(rav4.totalProfit());
+// CarCl.salam();
