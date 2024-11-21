@@ -278,28 +278,56 @@
 // book.call(hanif, "Abdullah Al Fahim", 555);
 // book.apply(hanif, ["Abdullah Al Fahim", 555]);
 
-const Person = function (name, birthYear) {
-  this.name = name;
-  this.birthYear = birthYear;
-};
+// const Person = function (name, birthYear) {
+//   this.name = name;
+//   this.birthYear = birthYear;
+// };
 
-Person.prototype.calculateAge = function (year) {
-  return year - this.birthYear;
-};
+// Person.prototype.calculateAge = function (year) {
+//   return year - this.birthYear;
+// };
 
-const mir = new Person("Mir", 1970);
+// const mir = new Person("Mir", 1970);
 // console.log(mir.calculateAge(2024));
 
-const Student = function (name, birthYear, subject) {
-  Person.call(this, name, birthYear);
-  this.subject = subject;
-};
+// const Student = function (name, birthYear, subject) {
+//   Person.call(this, name, birthYear);
+//   this.subject = subject;
+// };
 
-Student.prototype = Object.create(Person.prototype);
+// Student.prototype = Object.create(Person.prototype);
 
-Student.prototype.intro = function () {
-  return `I'm ${this.name}`;
-};
+// Student.prototype.intro = function () {
+//   return `I'm ${this.name}`;
+// };
 
-const mezba = new Student("Mezba Abedin", 1965, "Science");
-console.log(mezba.calculateAge(2024));
+// const mezba = new Student("Mezba Abedin", 1965, "Science");
+// console.log(mezba.calculateAge(2024));
+
+// class Person {
+//   constructor(name, birthYear) {
+//     this.name = name;
+//     this.birthYear = birthYear;
+//   }
+
+//   calculateAge() {
+//     return 2030 - this.birthYear;
+//   }
+// }
+
+// const mizan = new Person("Mizan", 2000);
+// console.log(mizan);
+
+// class Student extends Person {
+//   constructor(name, birthYear, subject) {
+//     super(name, birthYear);
+//     this.subject = subject;
+//   }
+
+//   calculateAge() {
+//     return 2040 - this.birthYear;
+//   }
+// }
+
+// const fahim = new Student("Fahim", 1990, "CSE");
+// console.log(fahim.calculateAge());
