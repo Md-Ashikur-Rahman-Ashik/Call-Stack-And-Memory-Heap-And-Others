@@ -378,3 +378,38 @@
 // const h6 = Object.create(CarProto);
 // h6.modifier("Haval", 10, 2);
 // console.log(h6.totalProfit());
+
+/*try {
+  // console.loge("All good");
+  // throw new Error("Something went wrong");
+  Promise.reject("It got carried away");
+} catch (err) {
+  console.log(err);
+}*/
+
+// console.log("All good");
+
+// (async () => {
+//   try {
+//     await Promise.reject("It got carried away");
+//   } catch (err) {
+//     console.log(err);
+//   }
+// })();
+
+class MyError extends Error {
+  constructor(message) {
+    super(message);
+    this.name = "My Error";
+  }
+}
+
+class DatabaseError extends Error {
+  constructor(message) {
+    super(message);
+    this.name = "Database Error";
+    this.message = "Something went wrong in the database";
+  }
+}
+
+throw new DatabaseError();
